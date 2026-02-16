@@ -1,4 +1,4 @@
-AI-POWERED EMERGENCY RESOURCE LOCATOR SYSTEM
+<h3>AI-POWERED EMERGENCY RESOURCE LOCATOR SYSTEM</h3>
 
 Problem Statement:
 During natural or man-made disasters such as floods, earthquakes, cyclones, fires, or pandemics, access to timely and accurate information is a major challenge. With no updated information about nearby resources there is a strong need for an intelligent emergency response system that ensures life-saving information is accessible even during network failures.
