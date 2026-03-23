@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;600&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter','Noto Sans Devanagari','Noto Sans Arabic',sans-serif;background:#f0f5ff;color:#0f1d3a;overflow-x:hidden}
+button,input,select,textarea{font-family:inherit}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#1a4fa080;border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:#1a4fa0}
+
+/* Page entry */
+@keyframes af-in    {from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes af-scale {from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+@keyframes af-spin  {0%{transform:scale(0)rotate(-180deg)}80%{transform:scale(1.08)rotate(4deg)}100%{transform:scale(1)rotate(0)}}
+@keyframes af-bar   {from{width:0}to{width:100%}}
+@keyframes af-tick  {from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes af-pulse {0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.5)}50%{box-shadow:0 0 0 12px rgba(239,68,68,0)}}
+@keyframes af-fc1   {from{opacity:0;transform:translateX(36px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes af-fc2   {from{opacity:0;transform:translateX(36px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes af-fc3   {from{opacity:0;transform:translateX(36px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes af-dot   {0%,100%{transform:translateY(0);opacity:.6}50%{transform:translateY(-7px);opacity:1}}
+@keyframes af-toast {from{opacity:0;transform:translateX(24px) scale(.95)}to{opacity:1;transform:none}}
+@keyframes af-blink {0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes em-fadein  {from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes em-step-in {from{opacity:0;transform:translateX(10px)}to{opacity:1;transform:none}}
+@keyframes af-shimmer {0%{background-position:-200% 0}100%{background-position:200% 0}}
+@keyframes af-float   {0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes af-glow    {0%,100%{opacity:.5}50%{opacity:1}}
+
+.af-page  {animation:af-in .3s cubic-bezier(.16,1,.3,1) both}
+.af-modal {animation:af-scale .25s cubic-bezier(.16,1,.3,1) both}
+.af-tick  {animation:af-tick 34s linear infinite}
+.af-fc1   {animation:af-fc1 .65s .1s cubic-bezier(.16,1,.3,1) both}
+.af-fc2   {animation:af-fc2 .65s .26s cubic-bezier(.16,1,.3,1) both}
+.af-fc3   {animation:af-fc3 .65s .42s cubic-bezier(.16,1,.3,1) both}
+.af-d1    {animation:af-dot 1.2s 0s ease-in-out infinite}
+.af-d2    {animation:af-dot 1.2s .2s ease-in-out infinite}
+.af-d3    {animation:af-dot 1.2s .4s ease-in-out infinite}
+.af-sos   {animation:af-pulse 2s ease-in-out infinite}
+.af-live  {animation:af-blink 1.4s ease-in-out infinite}
+.em-card  {transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .22s ease;cursor:pointer}
+.em-card:hover  {transform:translateY(-5px)}
+.em-card:active {transform:scale(.96)}
+.em-step-anim   {animation:em-step-in .22s cubic-bezier(.16,1,.3,1) both}
+.em-fadein      {animation:em-fadein .28s cubic-bezier(.16,1,.3,1) both}
+
+/* Hover states */
+.hov-btn:hover  {filter:brightness(1.08);transform:translateY(-2px)}
+.hov-btn:active {transform:scale(.96)}
+.hov-card       {transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease!important}
+.hov-card:hover {transform:translateY(-4px)!important;box-shadow:0 12px 40px rgba(26,79,160,.2)!important}
+.hov-card:active{transform:scale(.97)!important}
+.hov-nav        {transition:all .18s ease!important}
+.hov-nav:hover  {background:rgba(255,255,255,.14)!important;color:white!important;padding-left:18px!important}
+.hov-pill       {transition:all .18s ease!important}
+.hov-pill:hover {border-color:#1a4fa0!important;color:#1a4fa0!important;transform:translateY(-1px)}
+.hov-sugg       {transition:all .18s ease!important}
+.hov-sugg:hover {background:#1a4fa0!important;color:white!important;transform:translateY(-2px)}
+.hov-lang       {transition:all .2s ease!important}
+.hov-lang:hover {background:#1a4fa0!important;color:white!important;border-color:#1a4fa0!important;transform:translateY(-2px)}
+.hov-qc         {transition:all .22s cubic-bezier(.34,1.56,.64,1)!important;position:relative;overflow:hidden}
+.hov-qc:hover   {transform:translateY(-5px) scale(1.02)!important;box-shadow:0 16px 40px rgba(26,79,160,.2)!important}
+.hov-qc:active  {transform:scale(.96)!important}
+.hov-qc::after  {content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.22) 0%,transparent 55%);opacity:0;transition:opacity .2s;pointer-events:none}
+.hov-qc:hover::after{opacity:1}
+@keyframes qc-ripple{0%{transform:scale(0);opacity:.45}100%{transform:scale(3.5);opacity:0}}
+.qc-ripple{position:absolute;border-radius:50%;background:rgba(26,79,160,.15);transform:scale(0);animation:qc-ripple .6s ease-out forwards;pointer-events:none}
+
+/* Input focus glow */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(26,79,160,.15) !important;
+  border-color: #1a4fa0 !important;
+  transition: box-shadow .2s, border-color .2s;
+}
+
+/* Toast polish */
+.af-toast-item {animation: af-toast .3s cubic-bezier(.16,1,.3,1) both}
+
+/* Smooth page transitions */
+main > div {will-change:transform,opacity}
+
+/* Sidebar animated gradient bg */
+@keyframes af-sidebar-flow {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+.af-sidebar-bg {
+  background:linear-gradient(160deg,#08173a,#0a1f4e,#0d2d6b,#0a1f4e,#071228);
+  background-size:300% 300%;
+  animation:af-sidebar-flow 12s ease infinite;
+}
+
+/* Notepad animated page flip */
+@keyframes af-pageflip {
+  0%{transform:rotateY(0deg)}
+  50%{transform:rotateY(-15deg)}
+  100%{transform:rotateY(0deg)}
+}
+
+/* Weather cloud drift */
+@keyframes af-cloud-drift {
+  0%{transform:translateX(0)}
+  50%{transform:translateX(10px)}
+  100%{transform:translateX(0)}
+}
+.af-cloud-drift {animation:af-cloud-drift 6s ease-in-out infinite}
+
+/* Rain drop fall */
+@keyframes af-raindrop {
+  0%{transform:translateY(-20px);opacity:0}
+  30%{opacity:1}
+  100%{transform:translateY(60px);opacity:0}
+}
+
+/* First aid step flash */
+@keyframes af-step-flash {
+  0%{box-shadow:0 0 0 0 rgba(239,68,68,.4)}
+  70%{box-shadow:0 0 0 12px rgba(239,68,68,0)}
+  100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}
+}
+.af-step-active {animation:af-step-flash 1.5s ease-in-out}
+
+/* Panic ring expand */
+@keyframes af-panic-ring {
+  0%{transform:scale(1);opacity:.7}
+  100%{transform:scale(2.2);opacity:0}
+}
+.af-panic-ring {
+  position:absolute;border-radius:50%;border:2px solid #ef4444;
+  animation:af-panic-ring 1.5s ease-out infinite;pointer-events:none;
+}
+
+/* About card reveal */
+@keyframes af-card-rise {
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:none}
+}
+.af-card-rise {animation:af-card-rise .4s cubic-bezier(.16,1,.3,1) both}
+
+/* Hero text shimmer */
+@keyframes af-shimmer-txt {
+  0%{background-position:-200% center}
+  100%{background-position:200% center}
+}
+
+/* Ticker bar */
+@keyframes af-tick2 {from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.af-tick2 {animation:af-tick2 40s linear infinite}
+
+@keyframes af-in    {from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes af-scale {from{opacity:0;transform:scale(.93)}to{opacity:1;transform:none}}
+@keyframes af-spin  {0%{transform:scale(0)rotate(-180deg)}80%{transform:scale(1.08)rotate(4deg)}100%{transform:scale(1)rotate(0)}}
+@keyframes af-bar   {from{width:0}to{width:100%}}
+@keyframes af-tick  {from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes af-pulse {0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.5)}50%{box-shadow:0 0 0 10px rgba(239,68,68,0)}}
+@keyframes af-fc1   {from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes af-fc2   {from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes af-fc3   {from{opacity:0;transform:translateX(32px)}to{opacity:1;transform:none}}
+@keyframes af-dot   {0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes af-toast {from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+@keyframes af-blink {0%,100%{opacity:1}50%{opacity:.3}}
+@keyframes em-fadein  {from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes em-step-in {from{opacity:0;transform:translateX(8px)}to{opacity:1;transform:none}}
+
+.af-page  {animation:af-in .32s ease both}
+.af-modal {animation:af-scale .24s ease both}
+.af-tick  {animation:af-tick 34s linear infinite}
+.af-fc1   {animation:af-fc1 .7s .1s ease both}
+.af-fc2   {animation:af-fc2 .7s .32s ease both}
+.af-fc3   {animation:af-fc3 .7s .54s ease both}
+.af-d1    {animation:af-dot 1s 0s ease-in-out infinite}
+.af-d2    {animation:af-dot 1s .2s ease-in-out infinite}
+.af-d3    {animation:af-dot 1s .4s ease-in-out infinite}
+.af-sos   {animation:af-pulse 2s ease-in-out infinite}
+.af-live  {animation:af-blink 1.4s ease-in-out infinite}
+.em-card  {transition:transform .22s ease,box-shadow .22s ease;cursor:pointer}
+.em-card:hover  {transform:translateY(-4px)}
+.em-card:active {transform:scale(.97)}
+.em-step-anim   {animation:em-step-in .2s ease both}
+.em-fadein      {animation:em-fadein .3s ease both}
+
+.hov-btn:hover  {filter:brightness(1.1);transform:translateY(-1px)}
+.hov-card:hover {transform:translateY(-3px);box-shadow:0 10px 36px rgba(26,79,160,.18)!important}
+.hov-nav:hover  {background:rgba(255,255,255,.15)!important;color:white!important}
+.hov-pill:hover {border-color:#1a4fa0!important;color:#1a4fa0!important}
+.hov-sugg:hover {background:#1a4fa0!important;color:white!important}
+.hov-lang:hover {background:#1a4fa0!important;color:white!important;border-color:#1a4fa0!important}
+.hov-qc         {transition:all .22s cubic-bezier(.34,1.56,.64,1)!important;position:relative;overflow:hidden}
+.hov-qc:hover   {transform:translateY(-6px) scale(1.03)!important;box-shadow:0 14px 36px rgba(26,79,160,.22)!important}
+.hov-qc:active  {transform:scale(.95)!important}
+.hov-qc::after  {content:'';position:absolute;inset:0;border-radius:inherit;background:linear-gradient(135deg,rgba(255,255,255,.28) 0%,transparent 60%);opacity:0;transition:opacity .2s;pointer-events:none}
+.hov-qc:hover::after{opacity:1}
+@keyframes qc-ripple{0%{transform:scale(0);opacity:.5}100%{transform:scale(3);opacity:0}}
+.qc-ripple{position:absolute;border-radius:50%;background:rgba(26,79,160,.18);transform:scale(0);animation:qc-ripple .5s ease-out forwards;pointer-events:none}
