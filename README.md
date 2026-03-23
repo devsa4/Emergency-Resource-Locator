@@ -1,10 +1,6 @@
-# 🚨 Aapada-Flow — AI-Powered Emergency Resource System
+# 🚨 AapadaSetu — AI-Powered Emergency Resource System
 
-**Team EmergencyCoders · FS-VI-T038 · GEU B.Tech CSE**
 
-> Devang Saklani · Mansi Rawat · Sakshi Kaintura · Vinayak Sharma
-
----
 
 ## ⚡ Quick Start (VS Code)
 
